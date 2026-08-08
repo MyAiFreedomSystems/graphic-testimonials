@@ -2,6 +2,8 @@
 
 An agent skill (SKILL.md + scripts) that works with Kimi, Claude Code, and other agents that support skill folders.
 
+**See example cards and the full pipeline: https://myaifreedomsystems.github.io/testimonial-skills-site/**
+
 ## Install
 
 Copy this folder into your agent's skills directory (e.g. `~/.config/agents/skills/` or your runtime's managed skills root), restart the agent, and ask for it by name: `graphic-testimonials`.
