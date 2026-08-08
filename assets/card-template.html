@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Standalone testimonial card template (1080x1080). No Canva required.
+
+  Fill window.CARD below (or generate this file programmatically per card):
+    quote   - testimonial text (include typographic quotes if wanted)
+    name    - client name (rendered in script font)
+    role    - client role / company
+    heading - card heading (default "Testimonial")
+    stars   - 0-5, star row shown when > 0
+    photo   - optional image URL or absolute file:// path, shown as top circle
+    font    - optional @font-face family name you added in <style> for the script name
+
+  Brand via CSS variables in :root (--bg, --text, --accent, --ring, --script).
+
+  Render (macOS):
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
+      --screenshot=card.png --window-size=1080,1080 --hide-scrollbars file:///abs/path/card.html
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #1B3A5C;        /* card background / brand primary */
+    --text: #FFFFFF;      /* quote + heading */
+    --muted: #DCE4EC;     /* role line */
+    --accent: #FFD60A;    /* stars */
+    --ring: #F1EFE9;      /* photo ring */
+    --script: "Snell Roundhand", "Brush Script MT", cursive;  /* name font; override with @font-face */
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1080px; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 60px 40px; text-align: center;
+  }
+  .photo {
+    width: 240px; height: 240px; border-radius: 50%;
+    border: 4px solid var(--ring); object-fit: cover;
+    margin-bottom: 28px; display: none;
+  }
+  .stars { color: var(--accent); font-size: 64px; letter-spacing: 12px; margin: 12px 0 8px; }
+  h1 { font-size: 64px; margin-bottom: 28px; }
+  .quote {
+    font-size: 30px; line-height: 1.55; max-width: 960px; flex: 1;
+    display: flex; align-items: center;
+  }
+  .name { font-family: var(--script); font-size: 56px; margin: 36px 0 10px; }
+  .role { color: var(--muted); font-size: 26px; }
+</style>
+</head>
+<body>
+  <img class="photo" id="photo" alt="">
+  <div class="stars" id="stars"></div>
+  <h1 id="heading"></h1>
+  <p class="quote" id="quote"></p>
+  <div class="name" id="name"></div>
+  <div class="role" id="role"></div>
+<script>
+  const CARD = {
+    quote: "“Replace with the client's quote.”",
+    name: "Client Name",
+    role: "Role | Company",
+    heading: "Testimonial",
+    stars: 5,
+    photo: ""   // e.g. "file:///abs/path/face.png" — leave empty to hide
+  };
+  document.getElementById("quote").textContent = CARD.quote;
+  document.getElementById("name").textContent = CARD.name;
+  document.getElementById("role").textContent = CARD.role;
+  document.getElementById("heading").textContent = CARD.heading;
+  document.getElementById("stars").textContent = "★".repeat(CARD.stars || 0);
+  if (CARD.photo) { const p = document.getElementById("photo"); p.src = CARD.photo; p.style.display = "block"; }
+</script>
+</body>
+</html>
