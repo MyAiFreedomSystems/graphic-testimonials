@@ -1,8 +1,10 @@
-# graphic-testimonials
+![Graphic-Testimonials — Real praise, turned into cards worth posting](assets/social-preview.png)
+
+# Graphic-Testimonials
 
 An agent skill (SKILL.md + scripts) that works with Kimi, Claude Code, and other agents that support skill folders.
 
-**See example cards and the full pipeline: https://myaifreedomsystems.github.io/testimonial-skills-site/**
+**See example cards and the full pipeline: https://myaifreedomsystems.github.io/incredagents-site/**
 
 ## Install
 
